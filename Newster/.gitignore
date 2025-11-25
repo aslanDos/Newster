@@ -1,0 +1,26 @@
+# Xcode user settings
+xcuserdata/
+xcshareddata/
+
+# Derived data
+DerivedData/
+
+# SwiftUI previews device caches
+.swiftpm/
+.preview-thumbnails/
+*PreviewAssets*
+
+# Build products
+build/
+*.app
+
+# Swift Package Manager
+Packages/
+.package.resolved
+
+# Mock / test data (если не хочешь пушить)
+NewsMock.json
+
+# Duplicate Xcode workspace stuff
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/

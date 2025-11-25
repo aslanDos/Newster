@@ -9,12 +9,22 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var query = ""
+    @StateObject private var vm = NewsViewModel()
     
     var body: some View {
-        VStack {
-            SearchBar(text: $query)
+        NavigationView {
+            List (vm.articles) { article in
+                ArticleCard(article: article)
+            }
+            .navigationTitle("Latest News")
+            .task {
+                await vm.loadLatest()
+            }
         }
     }
+}
+
+#Preview {
+    HomeView()
 }
 

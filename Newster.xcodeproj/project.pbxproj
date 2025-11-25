@@ -10,9 +10,22 @@
 		35FC9C4D2ED3081F001AA16F /* Newster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		35276D9A2ED5BEA400F1D24D /* Exceptions for "Newster" folder in "Compile Sources" phase from "Newster" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 35FC9C492ED3081F001AA16F /* Sources */;
+			membershipExceptions = (
+				"Preview Assets/NewsMock.json",
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3536609D2ED36198005F21BC /* Newster */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				35276D9A2ED5BEA400F1D24D /* Exceptions for "Newster" folder in "Compile Sources" phase from "Newster" target */,
+			);
 			path = Newster;
 			sourceTree = "<group>";
 		};
@@ -251,6 +264,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "Newster/Preview\\ Assets Newster/Preview\\ Assets/NewsMock.json Newster/Preview\\ Assets/SampleData.json";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -283,6 +297,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "Newster/Preview\\ Assets Newster/Preview\\ Assets/NewsMock.json Newster/Preview\\ Assets/SampleData.json";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

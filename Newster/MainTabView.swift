@@ -12,11 +12,6 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Explore", systemImage: "magnifyingglass")
                 }
-
-            DownloadsView()
-                .tabItem {
-                    Label("Saved", systemImage: "bookmark.fill")
-                }
         }
     }
 }

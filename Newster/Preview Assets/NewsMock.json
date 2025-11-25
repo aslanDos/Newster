@@ -1,7 +1,146 @@
-//
-//  NewsMock.swift
-//  Newster
-//
-//  Created by Aslan Dossymzhan 2 on 25.11.2025.
-//
-
+{
+  "status": "success",
+  "totalResults": 10,
+  "results": [
+    {
+      "article_id": "mock-001",
+      "link": "https://example.com/news/1",
+      "title": "Apple Introduces New AI-Powered Tools for Developers",
+      "description": "Apple announced a new suite of AI tools that will transform the developer experience.",
+      "content": "Full mock content for article 1.",
+      "keywords": ["apple", "ai", "developer"],
+      "creator": ["John Doe"],
+      "language": "en",
+      "country": ["us"],
+      "category": ["technology"],
+      "pubDate": "2025-11-25 10:00:00",
+      "image_url": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f"
+    },
+    {
+      "article_id": "mock-002",
+      "link": "https://example.com/news/2",
+      "title": "Kazakhstan Opens New IT Innovation Hub in Almaty",
+      "description": "A new tech hub launches in Kazakhstan to support young developers.",
+      "content": "Full mock content for article 2.",
+      "keywords": ["kazakhstan", "startup", "it"],
+      "creator": ["Aslan S."],
+      "language": "en",
+      "country": ["kz"],
+      "category": ["business"],
+      "pubDate": "2025-11-25 09:20:00",
+      "image_url": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0"
+    },
+    {
+      "article_id": "mock-003",
+      "link": "https://example.com/news/3",
+      "title": "European Film Festival Gains Global Recognition",
+      "description": "A major new film festival attracts global media attention.",
+      "content": "Full mock content for article 3.",
+      "keywords": ["film", "festival"],
+      "creator": ["Jane Smith"],
+      "language": "en",
+      "country": ["fr"],
+      "category": ["entertainment"],
+      "pubDate": "2025-11-25 08:05:00",
+      "image_url": "https://images.unsplash.com/photo-1512427691650-1f000e1e3f0a"
+    },
+    {
+      "article_id": "mock-004",
+      "link": "https://example.com/news/4",
+      "title": "Tesla Expands Supercharger Network in Europe",
+      "description": "Tesla continues expanding its fast-charging infrastructure across Europe.",
+      "content": "Full mock content for article 4.",
+      "keywords": ["tesla", "ev", "europe"],
+      "creator": ["Elon Fans"],
+      "language": "en",
+      "country": ["de"],
+      "category": ["automotive"],
+      "pubDate": "2025-11-24 17:40:00",
+      "image_url": "https://images.unsplash.com/photo-1502877338535-766e1452684a"
+    },
+    {
+      "article_id": "mock-005",
+      "link": "https://example.com/news/5",
+      "title": "Global Markets React to Tech Industry Growth",
+      "description": "Stock markets rise as major tech companies report strong earnings.",
+      "content": "Full mock content for article 5.",
+      "keywords": ["market", "tech"],
+      "creator": ["Financial Times"],
+      "language": "en",
+      "country": ["us"],
+      "category": ["finance"],
+      "pubDate": "2025-11-24 15:10:00",
+      "image_url": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a"
+    },
+    {
+      "article_id": "mock-006",
+      "link": "https://example.com/news/6",
+      "title": "Scientists Discover New Exoplanet with Earth-like Features",
+      "description": "Astronomers found a new exoplanet believed to have a habitable climate.",
+      "content": "Full mock content for article 6.",
+      "keywords": ["space", "nasa"],
+      "creator": ["Science Today"],
+      "language": "en",
+      "country": ["us"],
+      "category": ["science"],
+      "pubDate": "2025-11-24 13:30:00",
+      "image_url": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
+    },
+    {
+      "article_id": "mock-007",
+      "link": "https://example.com/news/7",
+      "title": "New Mobile Gaming Trends in 2025",
+      "description": "Mobile gaming continues to dominate entertainment markets.",
+      "content": "Full mock content for article 7.",
+      "keywords": ["gaming", "mobile"],
+      "creator": ["Gamer News"],
+      "language": "en",
+      "country": ["jp"],
+      "category": ["gaming"],
+      "pubDate": "2025-11-24 12:18:00",
+      "image_url": "https://images.unsplash.com/photo-1511512578047-dfb367046420"
+    },
+    {
+      "article_id": "mock-008",
+      "link": "https://example.com/news/8",
+      "title": "Breakthrough in Battery Technology Announced",
+      "description": "Researchers developed a new battery that lasts five times longer.",
+      "content": "Full mock content for article 8.",
+      "keywords": ["battery", "technology"],
+      "creator": ["Tech Insider"],
+      "language": "en",
+      "country": ["cn"],
+      "category": ["technology"],
+      "pubDate": "2025-11-24 11:11:00",
+      "image_url": "https://images.unsplash.com/photo-1509395176047-4a66953fd231"
+    },
+    {
+      "article_id": "mock-009",
+      "link": "https://example.com/news/9",
+      "title": "New VR Headset Promises Record Resolution",
+      "description": "A major VR company unveiled a headset with revolutionary display quality.",
+      "content": "Full mock content for article 9.",
+      "keywords": ["vr", "ar"],
+      "creator": ["VR World"],
+      "language": "en",
+      "country": ["us"],
+      "category": ["technology"],
+      "pubDate": "2025-11-24 10:00:00",
+      "image_url": "https://images.unsplash.com/photo-1518770660439-4636190af475"
+    },
+    {
+      "article_id": "mock-010",
+      "link": "https://example.com/news/10",
+      "title": "Major Update Released for Popular iOS App",
+      "description": "A widely used iOS app received a major update with new features.",
+      "content": "Full mock content for article 10.",
+      "keywords": ["ios", "update"],
+      "creator": ["Apple Dev News"],
+      "language": "en",
+      "country": ["us"],
+      "category": ["technology"],
+      "pubDate": "2025-11-24 09:00:00",
+      "image_url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4"
+    }
+  ]
+}
