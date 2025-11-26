@@ -2,9 +2,13 @@ import SwiftUI
 import Kingfisher
 
 struct ArticleDetailView: View {
+    
     let article: Article
     
+    @EnvironmentObject var favorites: FavoritesManager
+    
     var body: some View {
+        
         ScrollView {
             VStack(spacing: 0) {
                 
@@ -19,9 +23,22 @@ struct ArticleDetailView: View {
                     .padding(.top, 32)
                     .padding(.bottom, 16)
             }
+            
         }
         .edgesIgnoringSafeArea(.top)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    favorites.toggle(article.id)
+                } label: {
+                    Image(systemName: favorites.isBookmarked(article.id) ? "heart.fill" : "heart")
+                        .font(.title3)
+                        .foregroundColor(favorites.isBookmarked(article.id) ? .blue : .gray)
+                }
+            }
+        }
+
     }
 }
 

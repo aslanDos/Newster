@@ -8,8 +8,9 @@
 import Foundation
 
 struct NewsService {
+    
     private let apiKey: String = ProcessInfo.processInfo.environment["API_KEY"]!
-    private let useMock = true
+    public let useMock = true
     
     func fetchLatest() async throws -> [Article] {
         let urlString = "https://newsdata.io/api/1/latest?apikey=\(apiKey)&language=ru"

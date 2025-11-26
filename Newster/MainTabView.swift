@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct MainTabView: View {
+    
+    @EnvironmentObject var favorites: FavoritesManager
+    
     var body: some View {
         TabView {
             HomeView()
@@ -8,9 +11,9 @@ struct MainTabView: View {
                     Label("Home", systemImage: "house.fill")
                 }
 
-            BookMarkView()
+            FavoritesView(favorites: favorites)
                 .tabItem {
-                    Label("Bookmarks", systemImage: "bookmark")
+                    Label("Favorites", systemImage: "heart")
                 }
         }
     }
@@ -18,4 +21,5 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
+        .environmentObject(FavoritesManager())
 }
