@@ -14,7 +14,11 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             List (vm.articles) { article in
-                ArticleCard(article: article)
+                Section {
+                    NavigationLink(destination: ArticleDetailView(article: article)) {
+                        ArticleCard(article: article)
+                    }
+                }
             }
             .navigationTitle("Latest News")
             .task {

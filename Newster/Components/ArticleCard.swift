@@ -1,42 +1,76 @@
 import SwiftUI
+import Kingfisher
 
 struct ArticleCard: View {
     let article: Article
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        HStack(alignment: .top, spacing: 12) {
 
+            // MARK: - Image
             if let image = article.image_url,
                let url = URL(string: image) {
-                
-                AsyncImage(url: url) { img in
-                    img.resizable()
-                        .aspectRatio(1.78, contentMode: .fill)
-                } placeholder: {
-                    Rectangle()
-                        .fill(Color.gray.opacity(0.2))
-                }
-                .frame(height: 200)
-                .clipped()
-                .cornerRadius(12)
-            } else {
-                Rectangle()
-                    .fill(Color.gray.opacity(0.15))
-                    .frame(height: 200)
+
+                KFImage(url)
+                    .placeholder {
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.gray.opacity(0.15))
+                    }
+                    .fade(duration: 0.25)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 110, height: 110)
+                    .clipped()
                     .cornerRadius(12)
+            } else {
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.gray.opacity(0.15))
+                    .frame(width: 110, height: 110)
             }
 
-            Text(article.title)
-                .font(.headline)
-                .foregroundColor(.primary)
+            // MARK: - Text Body
+            VStack(alignment: .leading, spacing: 6) {
 
-            if let desc = article.description, !desc.isEmpty {
-                Text(desc)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                // CATEGORY
+                if let category = article.category.first {
+                    Text(category.capitalized)
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+
+                // TITLE
+                Text(article.title)
+                    .font(.headline)
+                    .foregroundStyle(.primary)
                     .lineLimit(2)
+
+                // AUTHOR + DATE
+                HStack(spacing: 6) {
+
+                    if let creator = article.creator?.first {
+                        Circle()
+                            .fill(Color.gray.opacity(0.3))
+                            .frame(width: 22, height: 22)
+                            .overlay(
+                                Text(String(creator.prefix(1)))
+                                    .foregroundColor(.white)
+                                    .font(.caption)
+                            )
+                        Text(creator)
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+
+                    if let date = formattedDate(article.pubDate) {
+                        Text("•")
+                            .foregroundColor(.gray)
+                        Text(date)
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                }
             }
         }
-        .padding()
+        .padding(.vertical, 6)
     }
 }

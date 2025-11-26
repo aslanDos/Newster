@@ -32,7 +32,7 @@ extension NewsService {
         if let url = Bundle.main.url(forResource: "NewsMock", withExtension: "json") {
             print("FOUND FILE:", url)
         } else {
-            print("❌ FILE NOT FOUND")
+            print("FILE NOT FOUND")
         }
         
         guard let url = Bundle.main.url(forResource: "NewsMock",
