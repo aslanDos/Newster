@@ -12,32 +12,34 @@ struct FavoritesView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if viewModel.isLoading {
-                    ProgressView("Loading...")
-                } else if viewModel.favoriteArticles.isEmpty {
-                    ContentUnavailableView(
-                        "No favorites",
-                        systemImage: "bookmark",
-                        description: Text("You haven't saved any articles yet.")
-                    )
-                } else {
-                    List(viewModel.favoriteArticles) { article in
-                        Section {
-                            NavigationLink {
-                                ArticleDetailView(article: article)
-                                    .environmentObject(favorites)
-                            } label: {
-                                ArticleCard(article: article)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+
+                    // MARK: Header
+                    Text("Favorites")
+                        .font(.largeTitle.bold())
+                        .padding(.horizontal)
+
+                    // MARK: Articles list
+                    LazyVStack(spacing: 16) {
+                        ForEach(viewModel.favoriteArticles) { article in
+                            NavigationLink(destination: ArticleDetailView(article: article)) {
+                                ArticleCard(article: article, style: .horizontal)
+                                    .padding(.horizontal)
                             }
                         }
                     }
-    
                 }
+                .padding(.vertical)
             }
-            .navigationTitle("Favorites")
+            .navigationBarTitleDisplayMode(.inline)
             .onReceive(favorites.$favorites) { _ in
                 viewModel.loadFavorites()
+            }
+            .overlay {
+                if viewModel.isLoading {
+                    ProgressView("Loading...")
+                }
             }
         }
     }

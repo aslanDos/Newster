@@ -50,15 +50,15 @@ extension ArticleDetailView {
             Spacer()
             VStack(alignment: .leading, spacing: 10) {
                 
-                if let category = article.category.first {
-                    Text(category.capitalized)
-                        .font(.subheadline.bold())
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 6)
-                        .background(Color.blue.opacity(0.85))
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
-                }
+//                if let category = article.category.first {
+//                    Text(category.displayName)
+//                        .font(.subheadline.bold())
+//                        .padding(.horizontal, 12)
+//                        .padding(.vertical, 6)
+//                        .background(Color.blue.opacity(0.85))
+//                        .foregroundColor(.white)
+//                        .cornerRadius(20)
+//                }
                 
                 Text(article.title)
                     .font(.title.bold())

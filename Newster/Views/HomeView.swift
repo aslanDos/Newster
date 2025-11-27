@@ -1,29 +1,63 @@
-//
-//  HomeView.swift
-//  Newster
-//
-//  Created by Aslan Dossymzhan 2 on 23.11.2025.
-//
-
 import SwiftUI
 
 struct HomeView: View {
     
+    @State private var searchText = ""
     @StateObject private var vm = NewsViewModel()
     
     var body: some View {
         NavigationView {
-            List (vm.articles) { article in
-                Section {
-                    NavigationLink(destination: ArticleDetailView(article: article)) {
-                        ArticleCard(article: article)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    
+                    // MARK: Search
+                    SearchBar(text: $searchText)
+                    
+                    // MARK: Popular tags header
+                    HStack {
+                        Text("Popular tags")
+                            .font(.title.bold())
+
+                        Spacer()
+                        
+                        Button("Show All") { }
+                            .font(.subheadline)
+                            .foregroundColor(.blue)
+                    }
+                    .padding(.horizontal)
+
+                    // MARK: Popular tags content
+                    TagView()
+                        .padding(.horizontal)
+                    
+                    // MARK: Latest header
+                    HStack {
+                        Text("Latest News")
+                            .font(.title.bold())
+                        Spacer()
+                        Button("Show All") { }
+                            .font(.subheadline)
+                            .foregroundColor(.blue)
+                    }
+                    .padding(.horizontal)
+                    
+                    
+                    // MARK: Articles list
+                    LazyVStack(spacing: 16) {
+                        ForEach(vm.articles.prefix(4)) { article in
+                            NavigationLink(destination: ArticleDetailView(article: article)) {
+                                ArticleCard(article: article, style: .vertical)
+                                    .padding(.horizontal)
+                            }
+                        }
                     }
                 }
+                .padding(.vertical)
             }
-            .navigationTitle("Latest News")
-            .task {
-                await vm.loadLatest()
-            }
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .task {
+            await vm.loadLatest()
         }
     }
 }
@@ -32,4 +66,3 @@ struct HomeView: View {
     HomeView()
         .environmentObject(FavoritesManager())
 }
-
